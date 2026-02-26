@@ -69,7 +69,7 @@ void waitForCard() {
   uint8_t tempUidLength;
 
   Serial.println("Remove card from reader...");
-  while(nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, tempUid, tempUidLength, 100)) {
+  while(nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, tempUid, &tempUidLength, 100)) {
     delay(100);
   }
 }
